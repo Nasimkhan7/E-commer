@@ -1,13 +1,15 @@
-import { useFormik } from 'formik'
+// import { useFormik } from 'formik'
 import React from 'react'
 
 const AddProduct = () => {
 
-    const productForm = useFormik({
-        initialValues: {
+    // const productForm = useFormik({
+    //     initialValues: {
             
-        }
-    })
+
+            
+    //     }
+    // })
 
     return (
         <div>
