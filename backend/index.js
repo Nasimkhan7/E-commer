@@ -10,4 +10,4 @@ app.use('/user', UserRouter);
 
 app.listen(port, () => {
     console.log('server started');
-})
+});
