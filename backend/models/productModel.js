@@ -2,10 +2,12 @@ const { model, Schema } = require('../connection');
 
 const userSchema = new Schema({
     title: String,
+    description: String,
     brand: String,
+    price: Number,
     category: String,
-    role: { type: String, default: 'user' },
-    createdAt: { type: Date, default: new Date() }
+    image: String,
+    createdAt: { type: Date, default: Date.now }
 });
 
-module.exports = model('User', userSchema);
+module.exports = model('products', userSchema);

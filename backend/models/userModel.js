@@ -5,7 +5,7 @@ const userSchema = new Schema({
     email: String,
     password: String,
     role: { type: String, default: 'user' },
-    createdAt: { type: Date, default: new Date() }
+    createdAt: { type: Date, default: Date.now }
 });
 
 module.exports = model('User', userSchema);

@@ -1,13 +1,23 @@
-// import { useFormik } from 'formik'
+'use client';
+import { useFormik } from 'formik'
 import React from 'react'
 
 const AddProduct = () => {
 
-    // const productForm = useFormik({
-    //     initialValues: {
+    const productForm = useFormik({
+        initialValues: {
+            title: '',
+            description: '',
+            brand: '',
+            price: 0,
+            category: '',
+            image: '',
+        },
+        onSubmit: (values) => {
+            console.log(values);
+        }
 
-    //     }
-    // })
+    })
 
     return (
         <div>
@@ -24,7 +34,7 @@ const AddProduct = () => {
                                 Manage your name, password and account settings.
                             </p>
                         </div>
-                        <form>
+                        <form onSubmit={productForm.handleSubmit}>
                             {/* Grid */}
                             <div className="grid sm:grid-cols-12 gap-2 sm:gap-6">
                                 <div className="sm:col-span-3">
@@ -74,7 +84,7 @@ const AddProduct = () => {
                                         htmlFor="af-account-full-name"
                                         className="inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200"
                                     >
-                                        Full name
+                                        Product Title
                                     </label>
                                     <div className="hs-tooltip inline-block">
                                         <svg
@@ -100,15 +110,12 @@ const AddProduct = () => {
                                 <div className="sm:col-span-9">
                                     <div className="sm:flex">
                                         <input
-                                            id="af-account-full-name"
+                                            id="title"
+                                            onChange={productForm.handleChange}
+                                            value={productForm.values.title}
                                             type="text"
                                             className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                             placeholder="Maria"
-                                        />
-                                        <input
-                                            type="text"
-                                            className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                            placeholder="Boone"
                                         />
                                     </div>
                                 </div>
